@@ -17,7 +17,7 @@ after_success:
     - docker build -t onlyrahul/multi-worker ./worker
     # log in Docker CLI
     - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-    #Take the images and push it to docker gub
+    #Take the images and push it to dockerhub
     - docker push onlyrahul4u/multi-client 
     - docker push onlyrahul/multi-mginx 
     - docker push onlyrahul/multi-server
