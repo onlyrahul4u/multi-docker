@@ -23,5 +23,16 @@ after_success:
     - docker push onlyrahul4u/multi-server
     - docker push onlyrahul4u/multi-worker
 
+deploy:
+    provider: elasticbeanstalk
+    region: "us-east-2"
+    app: "multi-docker"
+    env: "MultiDocker-env"
+    bucket_name: "elasticbeanstalk-us-east-2-095504243037"
+    bucket_path: "multi-docker"
+    on:
+        branch: master
+    access_key_id: $ACCESS_KEY_ID
+    secret_access_key: $SECRET_ACCESS_KEY
 
 
